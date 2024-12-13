@@ -1,0 +1,44 @@
+{
+    "manifest_version":3,
+    "name":"Lesson",
+    "version":"1.0.0",
+    "description":"This is a lesson.",
+    "permissions":[
+        "activeTab",
+        "tabs"
+    ],
+    "action":{
+        "default_title":"Lesson",
+        "default_popup":"popup.html",
+        "style":["popup.css","bootstrap.min.css"],
+        "script":["popup.js","bootstrap.bundle.min.js"],
+        "matches":["<all_urls>"]
+    },
+    "content_scripts":[
+        {
+            "css":["css/content.css"],
+            "js":["content.js"],
+            "matches":[
+                "https://*/*",
+                "http://*/*"
+            ],
+            "type":"module",
+            "run_at":"document_end"
+        }
+    ],
+    "content_security_policy": {
+      "extension_pages": "script-src  'self' 'wasm-unsafe-eval'; object-src 'self'; script-src-elem 'self';",
+      "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'wasm-unsafe-eval'; child-src 'self';"
+    },
+    "cross_origin_opener_policy": {
+        "value": "same-origin"
+    },
+    "optional_host_permissions": [
+        "http://*/*", "https://*/*"
+    ],
+    "web_accessible_resources": [{ 
+        "resources": ["js/main.js", "*.js","src/*","/emaples/jsm/*","componets/*","animations/*","models/*","jsm/*"],
+        "matches": ["<all_urls>"]
+    }]
+    
+}

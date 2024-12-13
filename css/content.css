@@ -1,0 +1,14 @@
+#lessoncont{
+  
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 100000!important;
+    top:0;
+    pointer-events:none
+}
+canvas{
+    top: 0;
+    position: fixed;
+    z-index:1000000;
+}
