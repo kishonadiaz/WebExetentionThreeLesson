@@ -1,6 +1,6 @@
-animations/
-componets/
-models/
+animations/*
+componets/*
+models/*
 importRouting.js
 vs.code
 .git
